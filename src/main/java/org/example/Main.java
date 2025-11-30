@@ -30,6 +30,17 @@ public class Main {
         // Practicing Relative Locators
         WebElement passwordFieldBelowUserName = driver.findElement(RelativeLocator.with(By.tagName("input")).below(By.id("username")));
         WebElement privacyPolicyLink = driver.findElement(RelativeLocator.with(By.tagName("a")).toRightOf(By.linkText("Practice Test Automation.")));
+
+        // XPath Locators
+        WebElement usernameInputFieldXpath = driver.findElement(By.xpath("//input[@id='username']"));
+        WebElement passwordInputFieldXpath = driver.findElement(By.xpath("//input[@name='password']"));
+        WebElement submitBtnXpath = driver.findElement(By.xpath("//button[@id='submit']"));
+
+        // CSS Selectors
+        WebElement usernameInputFieldCss = driver.findElement(By.cssSelector("input[id='username']"));
+        WebElement passwordInputFieldCss = driver.findElement(By.cssSelector("input[name='password']"));
+        WebElement submitBtnCss = driver.findElement(By.cssSelector("button[id='submit']"));
+
         driver.quit();
     }
 
