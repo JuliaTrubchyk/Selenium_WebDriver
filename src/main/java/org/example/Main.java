@@ -14,7 +14,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
-        findingExceptionPageElements(driver);
+        findingPageElements(driver);
         driver.quit();
     }
 
@@ -43,6 +43,12 @@ public class Main {
         WebElement passwordInputField = driver.findElement(By.name("password"));
         WebElement submitBtn = driver.findElement(By.className("btn"));
 
+        usernameInputField.sendKeys("student");
+        passwordInputField.sendKeys("Password123");
+        submitBtn.isDisplayed();
+        submitBtn.click();
+
+        /*
         // Finding all input fields on the page
         List<WebElement> inputFields = driver.findElements(By.tagName("input"));
 
@@ -63,6 +69,7 @@ public class Main {
         WebElement usernameInputFieldCss = driver.findElement(By.cssSelector("input[id='username']"));
         WebElement passwordInputFieldCss = driver.findElement(By.cssSelector("input[name='password']"));
         WebElement submitBtnCss = driver.findElement(By.cssSelector("button[id='submit']"));
+         */
     }
 
     private static void findingExceptionPageElements(WebDriver driver){
